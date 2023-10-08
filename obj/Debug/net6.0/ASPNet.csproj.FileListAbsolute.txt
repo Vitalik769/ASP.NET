@@ -23,3 +23,6 @@ C:\Users\Vitalik\source\repos\ASPNet\ASPNet\obj\Debug\net6.0\refint\ASPNet.dll
 C:\Users\Vitalik\source\repos\ASPNet\ASPNet\obj\Debug\net6.0\ASPNet.pdb
 C:\Users\Vitalik\source\repos\ASPNet\ASPNet\obj\Debug\net6.0\ASPNet.genruntimeconfig.cache
 C:\Users\Vitalik\source\repos\ASPNet\ASPNet\obj\Debug\net6.0\ref\ASPNet.dll
+C:\Users\Vitalik\source\repos\ASPNet\ASPNet\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Vitalik\source\repos\ASPNet\ASPNet\obj\Debug\net6.0\ASPNet.csproj.AssemblyReference.cache
+C:\Users\Vitalik\source\repos\ASPNet\ASPNet\obj\Debug\net6.0\ASPNet.csproj.CopyComplete

@@ -1,28 +1,17 @@
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder();
+builder.Services.AddTransient<CalcService>();
+builder.Services.AddTransient<TimeOfDayService>();
 var app = builder.Build();
-
 app.Run(async context =>
 {
-    //1
-    Company company = new Company();
-    company.Name = "Apple";
-    company.Email = "Apple@gmail.com";
-    company.Address = "Infinite Loop Cupertino, California 95014";
+    var timeOfDayService = app.Services.GetService<TimeOfDayService>();
+    var CalcService = app.Services.GetService<CalcService>();
 
-    //2
-    Random random = new Random();
-    int randomNumber = random.Next(0, 101);
-    //Îutput
-    await context.Response.WriteAsync($"Compamy:\n {company.Name} \n {company.Email} \n {company.Address} ");
-    await context.Response.WriteAsync($"\nRandom number: {randomNumber}");
+    await context.Response.WriteAsync($"Time: {timeOfDayService?.GetTimeOfDay()}");
+    await context.Response.WriteAsync($"\nSum: {CalcService?.Add(5, 5)}");
+    await context.Response.WriteAsync($"\nSubtraction: {CalcService?.Subtract(5, 5)}");
+    await context.Response.WriteAsync($"\nDividion: {CalcService?.Divide(5, 5)}");
+    await context.Response.WriteAsync($"\nMultiplication: {CalcService?.Multiplication(5, 5)}");
 
 });
 app.Run();
-public class Company
-{
-    public string Name { get; set; }
-    public string Email { get; set; }
-    public string Address { get; set; }
-
-
-}
