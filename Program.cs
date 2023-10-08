@@ -1,17 +1,16 @@
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
-using Microsoft.AspNetCore.Components;
 
 var builder = WebApplication.CreateBuilder();
 
-builder.Services.AddTransient<Car>();
-builder.Services.AddTransient<Owner>();
+builder.Services.AddTransient<Book>();
+builder.Services.AddTransient<User>();
 
-builder.Configuration.AddJsonFile("Configuration/Cars.json");
+builder.Configuration.AddJsonFile("Route/Books.json");
 
 var app = builder.Build();
 var configuration = app.Services.GetService<IConfiguration>();
-var jsonFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Configuration/Owners");
+var jsonFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Route/users");
 
 if (File.Exists(jsonFilePath))
 {
@@ -20,31 +19,32 @@ if (File.Exists(jsonFilePath))
 
 app.Map("/", () => "Index Page");
 
-app.Map("/List", async (context) =>
+app.Map("/Library", async (context) =>
 {
-    await context.Response.WriteAsync("Hello driver!");
+    await context.Response.WriteAsync("Hello!!!!");
 });
 
-app.Map("/List/Cars", async (context) =>
+app.Map("/Library/books", async (context) =>
 {
-    var carsList = configuration.GetSection("Cars").Get<List<Car>>();
-    foreach (var car in carsList)
+    var book = app.Services.GetService<Book>();
+    var booksList = configuration.GetSection("Books").Get<List<Book>>();
+    foreach (var item in booksList)
     {
-        await context.Response.WriteAsync($"Car: {car.CarMake} by {car.Year}\n");
+        await context.Response.WriteAsync($"Book: {item.Title} by {item.Author}\n");
     }
 });
 
-app.Map("/List/Profile/{id:int?}", (int? id) =>
+app.Map("/Library/Profile/{id:int?}", (int? id) =>
 {
     if (id.HasValue && id >= 0 && id <= 5)
     {
-        var configFileName = $"Configuration/Owners/owner{id}.json";
+        var configFileName = $"Route/Users/user{id}.json";
         var filePath = Path.Combine(Directory.GetCurrentDirectory(), configFileName);
 
         if (File.Exists(filePath))
         {
-            var owner = JsonConvert.DeserializeObject<Owner>(File.ReadAllText(filePath));
-            return $"Name: {owner.Name}, Age: {owner.Age}";
+            var userInfo = JsonConvert.DeserializeObject<User>(File.ReadAllText(filePath));
+            return $"Name: {userInfo.Name}, Age: {userInfo.Age}";
         }
         else
         {
@@ -54,8 +54,8 @@ app.Map("/List/Profile/{id:int?}", (int? id) =>
     else
     {
 
-        var defaultOwner = JsonConvert.DeserializeObject<Owner>(File.ReadAllText("owner0.json"));
-        return $"Name: {defaultOwner.Name}, Age: {defaultOwner.Age}";
+        var defaultUserInfo = JsonConvert.DeserializeObject<User>(File.ReadAllText("user0.json"));
+        return $"Name: {defaultUserInfo.Name}, Age: {defaultUserInfo.Age}";
     }
 
 });
