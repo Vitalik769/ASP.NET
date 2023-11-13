@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "QxlhZoV5n0eSUqpD467zKXEXQhSV2ALHwZl4ND6l1AB5JswcPEgi0xySYktD6koHR5W2pXWYQZT9MS/JJqfuuA==",
+  "dgSpecHash": "ONU6jkIv/+xKx9J8Q+0q5Usx8d21UVC/xbm5iP0Q1D1DCKoNYLOIkQlGiL42lVEAwujZxEgYJsFyIUDJjehb6g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Vitalik\\source\\repos\\ASPNet\\ASPNet\\ASPNet.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Vitalik\\source\\repos\\LR-9\\LR-9\\LR-9.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Vitalik\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
