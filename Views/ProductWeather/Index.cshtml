@@ -1,0 +1,27 @@
+﻿﻿﻿@using AspNetMVC.Models
+@{
+
+    List<Product> products = new List<Product>();
+
+
+    products.Add(new Product { ID = 1, Name = "Audi Q7 2017", Price = 54.777M });
+    products.Add(new Product { ID = 2, Name = "BMW X5 2015", Price = 38.500M });
+    products.Add(new Product { ID = 3, Name = "Mercedes-Benz C-Class 2016", Price = 27.999M });
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width" />
+    <title>Завдання</title>
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body>
+    <div>
+        @await Component.InvokeAsync("Product", new {products=products})
+    </div>
+    <div>
+        @await Component.InvokeAsync("Weather", new {region="London"})
+    </div>
+</body>
+</html>
