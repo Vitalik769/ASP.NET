@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vitalik\\source\\repos\\ASPNet\\ASPNet\\ASPNet.csproj",
-      "projectName": "ASPNet",
-      "projectPath": "C:\\Users\\Vitalik\\source\\repos\\ASPNet\\ASPNet\\ASPNet.csproj",
+      "projectUniqueName": "C:\\Users\\Vitalik\\source\\repos\\Lr-10\\Lr-10\\Lr-10.csproj",
+      "projectName": "Lr-10",
+      "projectPath": "C:\\Users\\Vitalik\\source\\repos\\Lr-10\\Lr-10\\Lr-10.csproj",
       "packagesPath": "C:\\Users\\Vitalik\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vitalik\\source\\repos\\ASPNet\\ASPNet\\obj\\",
+      "outputPath": "C:\\Users\\Vitalik\\source\\repos\\Lr-10\\Lr-10\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Vitalik\\AppData\\Roaming\\NuGet\\NuGet.Config",
