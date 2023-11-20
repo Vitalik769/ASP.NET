@@ -1,8 +1,8 @@
-﻿using LR_9.Models;
+﻿using Lr_11.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace LR_9.Controllers
+namespace Lr_11.Controllers
 {
     public class HomeController : Controller
     {
